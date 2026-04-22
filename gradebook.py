@@ -27,5 +27,7 @@ def average(scores):
     return round(sum(scores) / len(scores), 2)
 
 def curved_score(score, bonus):
+    if bonus < 0:
+        raise ValueError("Bonus cant be less than zero")
     return min(score + bonus, 100)
 
